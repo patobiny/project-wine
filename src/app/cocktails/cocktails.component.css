@@ -1,0 +1,65 @@
+.grid-container {
+    margin: 20px;
+  }
+  
+  .dashboard-card {
+    
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  
+
+    
+  
+  .image{
+    height: 2px;
+    width: 2px;
+  }
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .btn-primary{
+    padding-left: 15px;
+    
+  }
+
+  .boddy{
+    padding: 1%;
+  }
+  .example{
+    width: 30%;
+    float: left;
+    padding: 1%;
+    border: chocolate;
+  }
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .boddy{
+    
+    /* background-image: url(""); */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1200px;
+    height: 600px;
+    
+  }
+  .head{
+    padding: 5px;
+  }
+  .bttn{
+    padding-top: 3px;
+  }
+  .crd{
+    text-align: center;
+  }

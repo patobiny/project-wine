@@ -1,0 +1,74 @@
+
+<body class= "boddy">
+  <div class="head">
+    <mat-card class="crd"><h1>In this place you can look for the best drinks</h1></mat-card>
+  <h4 >Please enter an ingredient:</h4>
+  
+  
+  <input type="text" [(ngModel)] = "ingrediant" class="form-control" placeholder=" 'gin' 'vodka' 'wine'"
+   >
+  
+  <div class="bttn">
+  <button mat-raised-button color="primary"  
+  
+  
+  (click)="cocktailApi()">
+  Find Cocktails</button>
+  
+  
+  <p style="color: darkred;" *ngIf = "errMessage" >No Cocktails were fount with the ingrediants you entered</p>
+  </div>
+<div *ngIf = "cocktailOrRecipe">
+<mat-card class="example" *ngFor = "let a of arr" >
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{strDrink[a]}}</mat-card-title>
+    <mat-card-subtitle>
+      <button 
+      class="btn-primary"
+      (click)="seeRecipe(idDrink[a])">
+      Learn how to make</button></mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <img [src] = "strDrinkThumb[a]" width="300px" height="200px" >
+  </mat-card-content>
+  <mat-card-actions>
+    
+  </mat-card-actions>
+</mat-card>
+
+</div>
+
+
+<div *ngIf = "!cocktailOrRecipe">
+  
+
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title >Drink name: {{nameDrink}}</mat-card-title>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <p> Category: {{strCategory}} </p>
+    <img [src] = "strDrinkThumb1" width="300px" height="200px">
+  </mat-card-content>
+  <mat-card-actions>
+   <h3>Instructions: {{strInstructions}}</h3>
+  </mat-card-actions>
+</mat-card>
+
+<br>
+<div>
+  <button mat-raised-button color="warn"
+  
+  (click)="cocktailOrRecipe= !cocktailOrRecipe">
+  Go back to Cocktails</button>
+</div>
+</div>
+
+
+

@@ -1,0 +1,38 @@
+<mat-card>
+    <h1>Sign Up</h1>
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="example-container">
+        <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Example: you@you.com"
+                [(ngModel)] = "email"
+                name = "email"
+                required>
+              <mat-hint>The one you really read</mat-hint>
+            </mat-form-field>
+          </p> 
+          <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Example: 1234!%$@"
+                [(ngModel)] = "password" 
+                name = "password" 
+                type = "password"
+                required>
+              <mat-hint>8 characters or more</mat-hint>
+            </mat-form-field>
+          </p>                                       
+        <div >
+            <button mat-raised-button color="primary" 
+                    [disabled]="!signupForm.form.valid">
+                     Sign up
+            </button>
+         <p *ngIf="isError">The error message is: {{errorMessage}}</p>
+        </div>
+      </div>
+    </form>
+   </mat-card>
+
+
+
