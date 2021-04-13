@@ -4,7 +4,7 @@ import { AuthService } from '../auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component, OnInit, Input,  Output, EventEmitter } from '@angular/core';
 import { WineService } from '../wines.service';
-
+import {FormControl} from '@angular/forms';
 
 
 
@@ -18,7 +18,7 @@ import { WineService } from '../wines.service';
 export class WineFormComponent implements OnInit {
 
   
-
+  
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -32,8 +32,37 @@ export class WineFormComponent implements OnInit {
   result;
   wineColor:boolean = false;
   savePredict:boolean = false;
+  hasNotError:boolean=true;
+
+ 
+
+animalControl = new FormControl('', Validators.required);
+  selectFormControl = new FormControl('', Validators.required);
+  colors = [
+    {name: 'Red' ,sound:'Good Choice!'},
+    {name: 'White',sound:'Good Choice!'},
+    
+  ];
+
+
+
+  validateType(color:number){
+    if(color!=0 && color!=1 ){
+      this.hasNotError=false;
+      console.log(this.hasNotError);
+    }
+    else{
+      this.hasNotError=true;
+    }
+  }
 
   predict(){
+    if(this.color['name']=="Red"){
+      this.color=1;
+    }else{
+      this.color=0;
+    }
+    console.log(this.color);
     this.savePredict = true;
     this.predictService.predictQuality(this.color, this.alcohol, this.volatile, this.citricAcid, this.chlorides, this.density).subscribe(
           res => {
