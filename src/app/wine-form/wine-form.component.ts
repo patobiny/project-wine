@@ -58,9 +58,9 @@ animalControl = new FormControl('', Validators.required);
 
   predict(){
     if(this.color['name']=="Red"){
-      this.color=1;
+      this.color="1";
     }else{
-      this.color=0;
+      this.color="0";
     }
     console.log(this.color);
     this.savePredict = true;
