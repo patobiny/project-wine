@@ -1,0 +1,9 @@
+<div class="main">
+    <h1>Please upload your file</h1>
+    <input (change)="onFilePicked($event)" class="custom-file-input"
+           placeholder="Upload File" type="file" />
+    <button (click)="onFileUpload()" class="myButton">Upload File</button>
+    <p *ngIf="good"> Upload Succed!</p>
+    <p *ngIf="errorMsg"> Please Select A File</p>
+    <p><button (click)="analyze()" class="myButton">Analyze</button></p>
+</div>

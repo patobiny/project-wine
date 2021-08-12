@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-welcome',
@@ -15,6 +17,9 @@ export class WelcomeComponent implements OnInit {
   }
   myWine(){
     this.router.navigate(['/wines']); 
+  }
+  gotoreko(){
+    this.router.navigate(['/rekognition']); 
   }
   
 

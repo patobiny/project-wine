@@ -36,6 +36,7 @@ import { WinesComponent } from './wines/wines.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RekognitionComponent } from './rekognition/rekognition.component';
 
 
 
@@ -54,7 +55,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     CocktailsComponent,
     WineFormComponent,
     WinesComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RekognitionComponent
   
     
     
