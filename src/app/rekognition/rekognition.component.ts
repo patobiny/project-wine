@@ -19,6 +19,7 @@ export class RekognitionComponent implements OnInit {
   result;
   analyzeV:boolean= false;
   thisJson;
+  message:boolean=false;
   constructor(private fileUploadService: DataService) {
     this.errorMsg = false;
   }
@@ -38,6 +39,13 @@ export class RekognitionComponent implements OnInit {
       this.analyzeV=true;
       this.thisJson=res;
     })
+  };
+
+  save(Name,Confidence){
+    this.fileUploadService.saveD(this.imgName,Name,Confidence).subscribe(res =>{
+    console.log(res);
+    console.log('Saved success');
+    });
   };
   
   onFileUpload() {
