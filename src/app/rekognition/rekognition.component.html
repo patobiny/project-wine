@@ -7,3 +7,11 @@
     <p *ngIf="errorMsg"> Please Select A File</p>
     <p><button (click)="analyze()" class="myButton">Analyze</button></p>
 </div>
+<div  *ngFor = "let a of thisJson">
+    <h3>The first object recognized is a: {{a.Name}}</h3>
+  <h3>The confiedence is: {{(a.Confidence | number: '1.0-2')}}</h3>
+  </div>
+  
+  <div  *ngIf = "analyzeV" >
+  <h1>If you would like to save this details, please press the button bellow:</h1>
+  </div>

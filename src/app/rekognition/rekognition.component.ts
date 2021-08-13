@@ -17,7 +17,8 @@ export class RekognitionComponent implements OnInit {
   good=false;
   title = 's3-file-uploader-app';
   result;
-
+  analyzeV:boolean= false;
+  thisJson;
   constructor(private fileUploadService: DataService) {
     this.errorMsg = false;
   }
@@ -34,7 +35,8 @@ export class RekognitionComponent implements OnInit {
   analyze(){
     this.fileUploadService.analyze(this.imgName).subscribe(res =>{
       console.log(res);
-      this.result=res;
+      this.analyzeV=true;
+      this.thisJson=res;
     })
   };
   
