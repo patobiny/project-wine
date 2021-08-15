@@ -10,8 +10,8 @@
 <div  *ngFor = "let row of thisJson;let i = index">
     <h3>The first object recognized is a: {{row.Name}}</h3>
   <h3>The confiedence is: {{(row.Confidence | number: '1.0-2')}}</h3>
-  <button (click)="save(row.Name,row.Confidence)" class="saveButton">Save</button>
-  <p *ngIf="message"> Saved Success!</p>
+  <button (click)="save(i)" class="saveButton">Save</button>
+  <p *ngIf="message[i]"> Saved Success!</p>
   </div>
   
   <!--div  *ngIf = "analyzeV" >
